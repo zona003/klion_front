@@ -5,13 +5,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { acountGuard } from './_helper/auth.guard';
 import { HomeComponent } from './home/home.component';
 
 
+import { acountGuard } from './_helper/auth.guard';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CardComponent } from './card/card.component';
+import { ContactsComponent } from './contacts/contacts.component';
+
 const appRoutes: Routes =[
     {path: 'login', component:LoginComponent, }
-    , {path: '', component : AppComponent, canActivate: [acountGuard]}
+    , {path: '', component : HomeComponent, canActivate: [acountGuard]}
 ];
 
 
@@ -20,6 +24,9 @@ const appRoutes: Routes =[
     AppComponent,
     LoginComponent,
     HomeComponent,
+    NavbarComponent,
+    CardComponent,
+    ContactsComponent,
     
   ],
   imports: [
