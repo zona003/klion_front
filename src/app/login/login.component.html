@@ -3,20 +3,20 @@
         <img class="logo" src="../../assets/LogoKlion.png" alt="Klion Logo">
     </div>
     <div class="forms_container">
-        <form>
+        <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
             <div class="con">
                 <div class="input_box">
                     <span class="input-item">
                         <i class="fa fa-phone"></i>
                     </span>
-                    <input class="form-input" id="txt-input" type="text" placeholder="+38(0)" required>
+                    <input class="form-input" formControlName="phone" id="txt-input" type="text" placeholder="+38">
                 </div>
 
                 <div class="input_box">
                     <span class="input-item">
                         <i class="fa fa-lock"></i>
                     </span>
-                    <input class="form-input" type="password" placeholder="Password" id="pwd" name="password" required>
+                    <input class="form-input" formControlName="password" type="password" placeholder="Password" id="pwd" name="password">
 
                     <!--      Show/hide password  -->
                     <span>
