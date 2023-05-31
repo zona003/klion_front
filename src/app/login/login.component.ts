@@ -25,6 +25,8 @@ constructor(
     });
   }
 
+  public passwordHide: boolean = true;
+
   ngOnInit() {
   }
 
@@ -37,7 +39,11 @@ constructor(
 
 
     this.acountService.login(this.myForm.value.phone, this.myForm.value.password);
-    console.log(this.myForm.value.phone);
-    console.log(this.myForm.value.password);
+    // console.log(this.myForm.value.phone);
+    // console.log(this.myForm.value.password);
+  }
+
+  eyebutton(){
+    this.passwordHide = !this.passwordHide;
   }
 }

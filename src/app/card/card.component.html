@@ -1,30 +1,31 @@
 <div class="main_vindow">
     <div class="logo_container">
         <img class="logo_img" src="../../assets/LogoKlionSmall.png" alt="small logo">
+        <input type="button" (click)="logout()">
     </div>
-    <div class="cards_container">
-        <div class="card_item">
+    <div *ngFor="let taskItem of tasks"  class="cards_container">
+        <div  class="card_item">
             <div class="dataline">
                 <i class="fa fa-clock"></i>
-                28.06.2023 12:00
+                {{taskItem.expDate}}
             </div>
             <div class="cardtitle">
-                Утвердить счет на оплату поставщику
+                {{taskItem.title}}
             </div>
             <div class="cardbody">
                 <div class="counteragent">
-                    Контрагент: АТБ.
+                    {{taskItem.counteragent == undefined ? taskItem.counteragent : taskItem.comment}}
                 </div>
                 <div class="sum">
-                    Сумма: 3 000 000,00 грн
+                    {{taskItem.sum}}
                 </div>
             </div>
             <div class="createdata">
                 <div class="author">
-                    Кондратский Андрей
+                    {{taskItem.author}}
                 </div>
                 <div class="createdate">
-                    28.06.2023 12:00
+                    {{taskItem.createDate}}
                 </div>
             </div>
 

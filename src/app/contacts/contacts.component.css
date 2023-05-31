@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
-.contacts_container{
+.contacts_container {
     /* display: flex; */
     width: 100%;
 }
 
 
-.input_box{
+.input_box {
     margin: 15px;
     height: 30px;
 }
@@ -18,7 +18,7 @@
     transform: translateY(50%);
 }
 
-.form-input{
+.form-input {
     width: 88%;
     height: 100%;
     padding-left: 50px;
@@ -54,21 +54,21 @@
     cursor: pointer; */
 }
 
-.contact-list{
+.contact-list {
     display: grid;
 }
 
-.contact-item{
+.contact-item {
     vertical-align: middle;
-    height: 32px;
+    height: 2em;
     padding-top: 4px;
     padding-left: 4%;
     border-bottom: 1px solid #BDBDBD;
     font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 130%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 2em;
 
-color: #4F4F4F;
+    color: #4F4F4F;
 }
