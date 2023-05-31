@@ -4,6 +4,8 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
 import { User } from '../_model/user';
 import { Task } from '../_model/task';
+import { Contact } from '../_model/contact';
+import { ContactPhone } from '../_model/phoneContact';
 
 // array in local storage for registered users
 const usersKey = 'angular-14-registration-login-example-users';
@@ -20,6 +22,12 @@ let testTasks : Task[] = [
     , new Task(new Date(2024,10,12,12,0,0,345), "Test title 3", "АТБ", "Test comment3", 1222, "Автор Авторський3", new Date(2020,11,12,12,0,0,345))
 ];
 
+
+let testContacts : Contact[] =[
+    new Contact(0, "Квадро Артем Скрипкович", "Maestro", [new ContactPhone("Home", "+380121234567"), new ContactPhone("Work", "+380221234567")])
+    , new Contact(1, "Квадро Артем Скрипкович1", "Maestro1", [new ContactPhone("Home", "+380421234567"), new ContactPhone("Work", "+380521234567")])
+];
+
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -33,6 +41,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return authenticate();
                 case url.endsWith('/tasks') && method === 'GET':
                     return getTasks();
+                case url.endsWith('/contacts') && method === 'GET':
+                    return getContacts();
                 case url.match(/\/users\/\d+$/) && method === 'GET':
                     return getUserById();
                 case url.match(/\/users\/\d+$/) && method === 'PUT':
@@ -60,6 +70,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         function getTasks(){
 
             return ok(testTasks);
+        }
+
+        function getContacts(){
+            return ok(testContacts);
         }
 
         function register() {

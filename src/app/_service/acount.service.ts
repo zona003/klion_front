@@ -7,6 +7,7 @@ import { catchError, map } from 'rxjs/operators';
 import { environment } from '../../enviroments/environment';
 import { User } from '../_model/user';
 import { Task } from '../_model/task';
+import { Contact } from '../_model/contact';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
@@ -78,5 +79,9 @@ export class AccountService {
 
     getTasks(){
         return this.http.get<Task[]>(`${environment.apiUrl}/tasks`);
+    }
+
+    getContacts(){
+        return this.http.get<Contact[]>(`${environment.apiUrl}/contacts`);
     }
 }

@@ -12,8 +12,8 @@
         
     </div>
     <div class="contact-list">
-        <div class="contact-item">
-            Абасова Оксана Васильевна
+        <div *ngFor="let contact of contacts" class="contact-item">
+            {{contact.fullName}}
         </div>
         <div class="contact-item">
             Абасова Оксана Васильевна
