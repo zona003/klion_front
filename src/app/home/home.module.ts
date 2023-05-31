@@ -8,6 +8,7 @@ import { HomeComponent } from './home.component';
 import { CardComponent } from '../card/card.component';
 import { ContactsComponent } from '../contacts/contacts.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NavbarComponent } from '../navbar/navbar.component';
         HomeComponent,
         CardComponent,
         ContactsComponent,
-        NavbarComponent
+        NavbarComponent,
+        ProfileComponent
     ]
 })
 export class HomeModule {}

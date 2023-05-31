@@ -17,11 +17,6 @@ export class CardComponent implements OnInit {
   )
   {}
 
-
-  logout(){
-      this.acountService.logout();
-  }
-
   ngOnInit() {
     this.acountService.getTasks()
         .pipe(first())

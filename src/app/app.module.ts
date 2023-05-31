@@ -11,9 +11,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from './_helper/auth.guard';
-//import { NavbarComponent } from './navbar/navbar.component';
-import { CardComponent } from './card/card.component';
-import { ContactsComponent } from './contacts/contacts.component';
+
 
 const homeModule = () => import('./home/home.module').then(x=> x.HomeModule);
 
@@ -29,7 +27,6 @@ const appRoutes: Routes =[
   declarations: [
     AppComponent,
     LoginComponent,
-    //NavbarComponent,
     
   ],
   imports: [

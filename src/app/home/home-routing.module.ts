@@ -5,15 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { CardComponent } from '../card/card.component';
 import { ContactsComponent } from '../contacts/contacts.component';
-
-//import { ProfileComponent } from '../profile/profile.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 const routes: Routes = [
     {
         path: '', component: HomeComponent,
         children: [
+            { path: '', component: CardComponent},
             { path: 'card', component: CardComponent },
-            { path: 'contacts', component: ContactsComponent }
+            { path: 'contacts', component: ContactsComponent },
+            {path : 'profile', component: ProfileComponent}
         ]
     }
 ];
