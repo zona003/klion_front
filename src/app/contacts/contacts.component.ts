@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Contact } from '../_model/contact';
 import { ContactPhone } from '../_model/phoneContact';
 import { AccountService } from '../_service/acount.service';
@@ -15,8 +15,6 @@ export class ContactsComponent implements OnInit {
 
   @Input()
   public searchString : string = "";
-  @Output()
-  public searchStringChange = new EventEmitter<string>();
 
   constructor(
     private acountService : AccountService
@@ -35,5 +33,18 @@ export class ContactsComponent implements OnInit {
 
   searchFunction(e : string){
     this.filtredContacts = this.contacts.filter(str => str.fullName.includes(e));
+  }
+
+  clearSearchInput(){
+    this.searchString="";
+    this.searchFunction(this.searchString);
+  }
+
+  test(){
+    console.log("test");
+  }
+
+  showModal(){
+
   }
 }

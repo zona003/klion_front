@@ -11,20 +11,23 @@ import { ContactsComponent } from '../contacts/contacts.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ProfileComponent } from '../profile/profile.component';
 
+import { ModalContactsComponent } from '../modal-contacts/modal-contacts.component';
+
 
 @NgModule({
     imports: [
         CommonModule,
         ReactiveFormsModule,
         HomeRoutingModule,
-        FormsModule
+        FormsModule,
     ],
     declarations: [
         HomeComponent,
         CardComponent,
         ContactsComponent,
         NavbarComponent,
-        ProfileComponent
+        ProfileComponent,
+        ModalContactsComponent
     ]
 })
 export class HomeModule {}

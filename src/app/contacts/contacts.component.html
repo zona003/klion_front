@@ -1,16 +1,17 @@
+<app-modal-contacts></app-modal-contacts>
 <div class="contacts_container">
     <div class="input_box">
         <span class="input-item">
             <i class="fa fa-magnifying-glass"></i>
         </span>
         <span>
-            <i class="fa-regular fa-x" aria-hidden="true" type="button" id="clear"></i>
+            <i class="fa-regular fa-x" aria-hidden="true" type="button" id="clear"  (click)="clearSearchInput()"></i>
         </span>
-        <input class="form-input" type="text" placeholder="Поиск" id="srch" name="search" [ngModel]="searchString" (ngModelChange)="searchFunction($event)">
+        <input class="form-input" type="text" placeholder="Поиск" #srchinput id="srch" name="search" [(ngModel)]="searchString" (ngModelChange)="searchFunction($event)">
         
     </div>
     <div class="contact-list">
-        <div *ngFor="let contact of filtredContacts" class="contact-item">
+        <div *ngFor="let contact of filtredContacts" class="contact-item"  (click)="test()">
             {{contact.fullName}}
         </div>
     </div>
