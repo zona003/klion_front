@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Contact } from '../_model/contact';
 import { ContactPhone } from '../_model/phoneContact';
 import { AccountService } from '../_service/acount.service';
@@ -11,6 +11,12 @@ import { first } from 'rxjs/operators';
 })
 export class ContactsComponent implements OnInit {
   contacts : Contact[] = [];
+  filtredContacts : Contact[] = [];
+
+  @Input()
+  public searchString : string = "";
+  @Output()
+  public searchStringChange = new EventEmitter<string>();
 
   constructor(
     private acountService : AccountService
@@ -21,9 +27,13 @@ export class ContactsComponent implements OnInit {
   ngOnInit() {
     this.acountService.getContacts()
     .pipe(first())
-        .subscribe(DBcontact => this.contacts = DBcontact);
-        this.contacts.forEach(element => {
-          console.log(element.fullName + "");
+        .subscribe(DBcontact => {
+          this.filtredContacts = DBcontact;
+          this.contacts = this.filtredContacts;
         });
+  }
+
+  searchFunction(e : string){
+    this.filtredContacts = this.contacts.filter(str => str.fullName.includes(e));
   }
 }
