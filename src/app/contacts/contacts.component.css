@@ -20,7 +20,8 @@
 
 .form-input {
     display: block;
-    width: 88%;
+    box-sizing: border-box;
+    width: 100%;
     height: 100%;
     padding-left: 50px;
 
@@ -39,7 +40,7 @@
 
 #clear {
     position: absolute;
-    margin-left: 88%;
+    right: 30px;
     transform: translateY(50%);
     color: #014289;
     /* margin-left: -45px;
