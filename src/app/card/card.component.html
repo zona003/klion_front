@@ -6,17 +6,17 @@
         <div  class="card_item">
             <div class="dataline">
                 <i class="fa fa-clock"></i>
-                {{taskItem.expDate}}
+                {{taskItem.expDate | date: 'dd.MM.yyyy HH:mm'}}
             </div>
             <div class="cardtitle">
                 {{taskItem.title}}
             </div>
             <div class="cardbody">
                 <div class="counteragent">
-                    {{taskItem.counteragent == undefined ? taskItem.counteragent : taskItem.comment}}
+                    {{taskItem.counteragent == undefined ? 'Комментарий: ' + taskItem.comment : 'Контрагент: ' + taskItem.counteragent }}
                 </div>
                 <div class="sum">
-                    {{taskItem.sum}}
+                    Сумма: {{taskItem.sum | number: '.2' }} грн
                 </div>
             </div>
             <div class="createdata">
@@ -24,7 +24,7 @@
                     {{taskItem.author}}
                 </div>
                 <div class="createdate">
-                    {{taskItem.createDate}}
+                    {{taskItem.createDate | date: 'dd.MM.yyyy HH:mm'}}
                 </div>
             </div>
 

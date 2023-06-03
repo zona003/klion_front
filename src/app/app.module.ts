@@ -1,6 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+
+import { registerLocaleData } from '@angular/common';
+import locale from '@angular/common/locales/ru-UA';
+
 
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';

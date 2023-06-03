@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AccountService} from '../_service/acount.service';
 import { Task } from '../_model/task';
 import { first } from 'rxjs';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-card',
@@ -9,7 +10,7 @@ import { first } from 'rxjs';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  
+
   tasks : Task[] = [];
 
   constructor(

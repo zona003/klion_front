@@ -1,4 +1,6 @@
+
 #container-modal {
+
     position: fixed;
     inset: 0;
 
@@ -7,12 +9,13 @@
 
     /* semi-transparent black background exposed by padding */
     background-color: rgba(0, 0, 0, .75);
-    padding: 40px;
+    padding: 40px 20px;
 
     /* enables scrolling for tall modals */
     overflow: auto;
 
     .modal-body {
+        margin-top: 50px;
         padding: 10px;
         background: #F1F1F1;
         border-radius: 15px;

@@ -28,6 +28,8 @@ constructor(
   public passwordHide: boolean = true;
 
   ngOnInit() {
+    if(this.acountService.userValue)
+      this.router.navigate(['/home']);
   }
 
   submit(){
@@ -46,4 +48,5 @@ constructor(
   eyebutton(){
     this.passwordHide = !this.passwordHide;
   }
+
 }
