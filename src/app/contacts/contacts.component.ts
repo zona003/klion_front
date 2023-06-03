@@ -3,6 +3,7 @@ import { Contact } from '../_model/contact';
 import { ContactPhone } from '../_model/phoneContact';
 import { AccountService } from '../_service/acount.service';
 import { first } from 'rxjs/operators';
+import { ModalService } from '../_service/modal.service';
 
 @Component({
   selector: 'app-contacts',
@@ -17,7 +18,8 @@ export class ContactsComponent implements OnInit {
   public searchString : string = "";
 
   constructor(
-    private acountService : AccountService
+    private acountService : AccountService,
+    public modalService: ModalService
   )
   {}
 
@@ -44,7 +46,11 @@ export class ContactsComponent implements OnInit {
     console.log("test");
   }
 
-  showModal(){
+  showModal(inpContact : Contact){
+    this.modalService.showModalWindow(inpContact);
+  }
 
+  get modalState(){
+    return this.modalService.showDialog;
   }
 }

@@ -1,1 +1,25 @@
-<p>modal-contacts works!</p>
+<div id="container-modal">
+    <div class="modal-body">
+        <span>
+            <i class="fa-regular fa-x" id="cancel-icon" type="button" (click)="hideModalFn()"></i>
+        </span>
+        <div class="modal-data">
+            <div class="contact-name">
+                {{currentContact.fullName}}
+            </div>
+            <div class="work-title">
+                {{currentContact.title}}
+            </div>
+            <div class="phones-list">
+                <div class="phone" *ngFor="let phoneItem of currentContact.phones">
+                    <div class="phone-title">
+                        {{phoneItem.title}}
+                    </div>
+                    <div class="phone-number">
+                        {{phoneItem.phone}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

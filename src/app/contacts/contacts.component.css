@@ -14,11 +14,12 @@
 
 .input-item {
     position: absolute;
-    left: 20px;
+    left: 30px;
     transform: translateY(50%);
 }
 
 .form-input {
+    display: block;
     width: 88%;
     height: 100%;
     padding-left: 50px;
@@ -37,10 +38,10 @@
 }
 
 #clear {
-    color: #333;
     position: absolute;
-    right: 20px;
+    margin-left: 88%;
     transform: translateY(50%);
+    color: #014289;
     /* margin-left: -45px;
     padding: 10px 10px 0px 0px;
     border-radius: 5px;
