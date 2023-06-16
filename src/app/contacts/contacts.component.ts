@@ -34,7 +34,7 @@ export class ContactsComponent implements OnInit {
   }
 
   searchFunction(e : string){
-    this.filtredContacts = this.contacts.filter(str => str.fullName.includes(e));
+    this.filtredContacts = this.contacts.filter(str => str.FullName.includes(e));
   }
 
   clearSearchInput(){

@@ -2,10 +2,14 @@ import {ContactPhone} from './phoneContact';
 
 export class Contact{
     constructor(
-        public id : number,
-        public fullName : string,
-        public title : string,
-        public phones: ContactPhone[]
+        public Department: string,
+        public Position : string,
+        public FullName : string,
+        public UID : string,
+        public LogInAllowed: boolean,
+        public Login: string,
+        public Password: string,
+        public ContactInfo: ContactPhone[]
     )
     {
 

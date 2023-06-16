@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
+import { Injectable, OnInit } from '@angular/core';
+import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { Observable, of, throwError, lastValueFrom } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
 import { User } from '../_model/user';
 import { Task } from '../_model/task';
 import { Contact } from '../_model/contact';
 import { ContactPhone } from '../_model/phoneContact';
+import contact from '../../assets/Employeers.json';
 
 // array in local storage for registered users
 const usersKey = 'angular-14-registration-login-example-users';
@@ -23,13 +24,11 @@ let testTasks : Task[] = [
 ];
 
 
-let testContacts : Contact[] =[
-    new Contact(0, "Квадро Артем Скрипкович", "Maestro", [new ContactPhone("Home", "+380121234567"), new ContactPhone("Work", "+380221234567")])
-    , new Contact(1, "Квадро Артем Скрипкович1", "Maestro1", [new ContactPhone("Home", "+380421234567"), new ContactPhone("Work", "+380521234567")])
-];
+let testContacts : Contact[] = contact;
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
+    
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const { url, method, headers, body } = request;
 
@@ -73,7 +72,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         function getContacts(){
-            return ok(testContacts);
+            return ok( testContacts);
         }
 
         function register() {

@@ -15,12 +15,7 @@ export class ModalContactsComponent {
   }
 
   @Input()
-  currentContact : Contact = 
-    new Contact(0,"Sample Name", "Sample Title", 
-          [
-            new ContactPhone("Home", "+380661234578"), 
-            new ContactPhone("Work", "+380991234567")
-    ]);
+  currentContact : Contact = new Contact('','','','',true,'','', [new ContactPhone('','')]);
 
     hideModalFn()
     {

@@ -1,12 +1,12 @@
 export class ContactPhone{
-    title: string = "";
-    phone: string = "";
+    Type: string = "";
+    Telephone: string = "";
     constructor(
-        title : string ,
-        phone: string
+        Type : string ,
+        Telephone: string
         )
     {
-        this.title = title;
-        this.phone = phone;
+        this.Type = Type;
+        this.Telephone = Telephone;
     }
 }

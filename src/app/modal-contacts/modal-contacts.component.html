@@ -5,18 +5,18 @@
         </span>
         <div class="modal-data">
             <div class="contact-name">
-                {{currentContact.fullName}}
+                {{currentContact.FullName}}
             </div>
             <div class="work-title">
-                {{currentContact.title}}
+                {{currentContact.Position}}
             </div>
             <div class="phones-list">
-                <div class="phone" *ngFor="let phoneItem of currentContact.phones">
+                <div class="phone" *ngFor="let phoneItem of currentContact.ContactInfo">
                     <div class="phone-title">
-                        {{phoneItem.title}}
+                        {{phoneItem.Type}}
                     </div>
                     <div class="phone-number">
-                        {{phoneItem.phone}}
+                        {{phoneItem.Telephone}}
                     </div>
                 </div>
             </div>

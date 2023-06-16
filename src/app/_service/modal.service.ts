@@ -9,12 +9,7 @@ export class ModalService{
     showDialog : boolean = false;
     constructor(){}
 
-    public currentContact : Contact = 
-    new Contact(0,"Sample Name", "Sample Title", 
-          [
-            new ContactPhone("Home", "+380661234578"), 
-            new ContactPhone("Work", "+380991234567")
-    ]);
+    public currentContact : Contact = new Contact('','','','',true,'','', [new ContactPhone('','')]);
 
     showModalWindow(inpContact : Contact){
         this.showDialog = true;
