@@ -26,34 +26,43 @@ export class AccountService {
         return this.userSubject.value;
     }
 
-    login(phone: string, password: string) {
-        console.log("try log in " + phone + "  " + password);
-        const body = { phone, password };
+    login(Telephone: string, Password: string) {
+        console.log("try log in " + Telephone + "  " + Password);
+        const body = { Telephone, Password };
         let token: string;
         let currentUser: User;
 
-        return this.http.post(`${environment.apiUrl}/login`, body, { responseType: "json" }).pipe(
+        return this.http.post(`${environment.apiUrl}/login`, body, { responseType: "text" }).pipe(
             catchError(error => {
                 const statusCode = error.status;
                 console.log(error.message);
                 return throwError(error);
             })
         )
-            .subscribe(
-                {
-                    next: (data: any) => {
-                        token = data["token"];
-                        console.log(token);
-                        if (token) {
-                            currentUser = new User("0", phone, password, token);
-                            localStorage.setItem('user', JSON.stringify(currentUser));
-                            this.userSubject.next(currentUser);
-                            this.user = this.userSubject.asObservable();
-                            console.log("token " + token);
-                            this.router.navigate(['/home']);
-                        }
-                    }
-                });
+            .subscribe((response) => {
+                currentUser = new User("0", Telephone, Password, response);
+                localStorage.setItem('user', JSON.stringify(currentUser));
+                this.userSubject.next(currentUser);
+                this.user = this.userSubject.asObservable();
+                console.log("token " + response);
+                this.router.navigate(['/home']);
+                console.log(response)
+            }
+                // {
+                //     next: (data: any) => {
+                //         token = data["token"];
+                //         console.log(token);
+                //         if (token) {
+                //             currentUser = new User("0", Telephone, Password, token);
+                //             localStorage.setItem('user', JSON.stringify(currentUser));
+                //             this.userSubject.next(currentUser);
+                //             this.user = this.userSubject.asObservable();
+                //             console.log("token " + token);
+                //             this.router.navigate(['/home']);
+                //         }
+                //     }
+                // }
+                );
 
 
         // return this.http.post<string>(`${environment.apiUrl}/login`, { phone, password })
@@ -71,9 +80,19 @@ export class AccountService {
     }
 
     logout() {
-        localStorage.removeItem('user');
-        this.userSubject.next(null);
-        this.router.navigate(['/login']);
+        return this.http.post(`${environment.apiUrl}/logout`, '').pipe(
+            catchError(error => {
+                const statusCode = error.status;
+                console.log(error.message);
+                return throwError(error);
+            })
+        )
+            .subscribe(resp => {
+                localStorage.removeItem('user');
+                this.userSubject.next(null);
+                this.router.navigate(['/login']);
+            })
+        
     }
 
 
@@ -82,6 +101,6 @@ export class AccountService {
     }
 
     getContacts(){
-        return this.http.get<Contact[]>(`${environment.apiUrl}/contacts`);
+        return this.http.get<Contact[]>(`${environment.apiUrl}/users`);
     }
 }

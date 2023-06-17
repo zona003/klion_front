@@ -1,6 +1,6 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { registerLocaleData } from '@angular/common';
 import locale from '@angular/common/locales/ru-UA';
@@ -9,13 +9,13 @@ import locale from '@angular/common/locales/ru-UA';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
-import {fakeBackendProvider} from './_helper/fake-backend';
+//import {fakeBackendProvider} from './_helper/fake-backend';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthGuard } from './_helper/auth.guard';
-
+import { JwtInterceptor } from './_helper/jwt.interceptor';
 
 
 const homeModule = () => import('./home/home.module').then(x=> x.HomeModule);
@@ -41,7 +41,10 @@ const appRoutes: Routes =[
     , FormsModule
     , RouterModule.forRoot(appRoutes),
   ],
-  providers: [AuthGuard, fakeBackendProvider],
+  providers: [
+    AuthGuard, 
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],//, fakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

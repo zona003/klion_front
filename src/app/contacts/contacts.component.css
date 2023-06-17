@@ -15,7 +15,7 @@
 .input-item {
     position: absolute;
     left: 30px;
-    transform: translateY(50%);
+    transform: translateY(45%);
 }
 
 .form-input {
@@ -41,7 +41,7 @@
 #clear {
     position: absolute;
     right: 30px;
-    transform: translateY(50%);
+    transform: translateY(45%);
     color: #014289;
     /* margin-left: -45px;
     padding: 10px 10px 0px 0px;

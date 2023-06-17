@@ -42,10 +42,6 @@ export class ContactsComponent implements OnInit {
     this.searchFunction(this.searchString);
   }
 
-  test(){
-    console.log("test");
-  }
-
   showModal(inpContact : Contact){
     this.modalService.showModalWindow(inpContact);
   }
