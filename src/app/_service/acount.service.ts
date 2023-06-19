@@ -36,6 +36,9 @@ export class AccountService {
             catchError(error => {
                 const statusCode = error.status;
                 console.log(error.message);
+                if(error.status == 401){
+                    this.deleteUser();
+                }
                 return throwError(error);
             })
         )
@@ -58,8 +61,7 @@ export class AccountService {
             })
         )
             .subscribe(resp => {
-                localStorage.removeItem('user');
-                this.userSubject.next(null);
+                this.deleteUser();
                 this.router.navigate(['/login']);
             })
         
@@ -67,10 +69,34 @@ export class AccountService {
 
 
     getTasks(){
-        return this.http.get<Task[]>(`${environment.apiUrl}/tasks`);
+        return this.http.get<Task[]>(`${environment.apiUrl}/tasks`).pipe(
+            catchError(error => {
+                const statusCode = error.status;
+                console.log(error.message);
+                if(error.status == 401){
+                    this.deleteUser();
+                }
+                return throwError(error);
+            })
+        );
     }
 
     getContacts(){
-        return this.http.get<Contact[]>(`${environment.apiUrl}/users`);
+        return this.http.get<Contact[]>(`${environment.apiUrl}/users`).pipe(
+            catchError(error => {
+                const statusCode = error.status;
+                console.log(error.message);
+                if(error.status == 401){
+                    this.deleteUser();
+                }
+                return throwError(error);
+            })
+        );
+    }
+
+    deleteUser()
+    {
+        localStorage.removeItem('user');
+        this.userSubject.next(null);
     }
 }
