@@ -44,39 +44,9 @@ export class AccountService {
                 localStorage.setItem('user', JSON.stringify(currentUser));
                 this.userSubject.next(currentUser);
                 this.user = this.userSubject.asObservable();
-                console.log("token " + response);
                 this.router.navigate(['/home']);
-                console.log(response)
             }
-                // {
-                //     next: (data: any) => {
-                //         token = data["token"];
-                //         console.log(token);
-                //         if (token) {
-                //             currentUser = new User("0", Telephone, Password, token);
-                //             localStorage.setItem('user', JSON.stringify(currentUser));
-                //             this.userSubject.next(currentUser);
-                //             this.user = this.userSubject.asObservable();
-                //             console.log("token " + token);
-                //             this.router.navigate(['/home']);
-                //         }
-                //     }
-                // }
-                );
-
-
-        // return this.http.post<string>(`${environment.apiUrl}/login`, { phone, password })
-        //     .pipe(map(token => {
-        //         let currentUser = new User("0", phone, password, token);
-        //         console.log(token);
-        //         // store user details and jwt token in local storage to keep user logged in between page refreshes
-        //         localStorage.setItem('user', JSON.stringify(currentUser));
-        //         this.userSubject.next(currentUser);
-        //         this.user = this.userSubject.asObservable();
-        //         console.log("token "+token);
-        //         this.router.navigate(['/home']);
-        //         return currentUser;
-        //     }));
+            );
     }
 
     logout() {
