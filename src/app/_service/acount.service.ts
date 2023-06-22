@@ -43,7 +43,7 @@ export class AccountService {
             })
         )
             .subscribe((response) => {
-                currentUser = new User("0", Telephone, Password, response);
+                currentUser = new User("0", Telephone, "", response);
                 localStorage.setItem('user', JSON.stringify(currentUser));
                 this.userSubject.next(currentUser);
                 this.user = this.userSubject.asObservable();
