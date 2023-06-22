@@ -44,7 +44,7 @@ const appRoutes: Routes =[
   providers: [
     AuthGuard, 
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-  ],//, fakeBackendProvider],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

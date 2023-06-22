@@ -27,7 +27,6 @@ export class AccountService {
     }
 
     login(Telephone: string, Password: string) {
-        console.log("try log in " + Telephone + "  " + Password);
         const body = { Telephone, Password };
         let token: string;
         let currentUser: User;

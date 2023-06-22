@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 .contacts_container {
-    /* display: flex; */
     width: 100%;
 }
 
@@ -43,17 +42,6 @@
     right: 30px;
     transform: translateY(45%);
     color: #014289;
-    /* margin-left: -45px;
-    padding: 10px 10px 0px 0px;
-    border-radius: 5px;
-
-    float: right;
-    position: relative;
-    right: 1%;
-    top: -.2%;
-    z-index: 5;
-
-    cursor: pointer; */
 }
 
 .contact-list {
