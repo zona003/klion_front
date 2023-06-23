@@ -9,4 +9,4 @@ CMD npm run start
 FROM nginx as runtime
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /usr/src/app/dist/sample-app /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/klion /usr/share/nginx/html
