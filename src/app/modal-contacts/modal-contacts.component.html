@@ -1,7 +1,9 @@
 <div id="container-modal">
     <div class="modal-body">
         <span>
-            <i class="fa-regular fa-x" id="cancel-icon" type="button" (click)="hideModalFn()"></i>
+            <button id="cancel-icon"  (click)="hideModalFn()">
+                <img src="../../assets/icons/close/default.png" alt="cross">
+        </button>
         </span>
         <div class="modal-data">
             <div class="contact-name">
@@ -16,7 +18,7 @@
                         {{phoneItem.Type}}
                     </div>
                     <div class="phone-number">
-                        {{phoneItem.Telephone}}
+                        <a href="tel:{{phoneItem.Telephone}}">{{phoneItem.Telephone}}</a>
                     </div>
                 </div>
             </div>
