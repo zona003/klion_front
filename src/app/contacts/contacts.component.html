@@ -1,12 +1,16 @@
 <div class="contacts_container">
     <div class="input_box">
-        <span class="input-item">
-            <i class="fa fa-magnifying-glass" style="color: #014289;"></i>
+        <span class="search-glass">
+            <img src="../../assets/icons/serach/default.png" alt="glass">
         </span>
         <span>
-            <i class="fa-regular fa-x" aria-hidden="true" type="button" id="clear"  (click)="clearSearchInput()"></i>
+            <span>
+                <button id="clear"  (click)="clearSearchInput()">
+                    <img src="../../assets/icons/close/default.png" alt="cross">
+            </button>
+            </span>
         </span>
-        <input class="form-input" type="text" placeholder="Поиск" #srchinput id="srch" name="search" [(ngModel)]="searchString" (ngModelChange)="searchFunction($event)">
+        <input class="form-input" type="text" placeholder="Пошук" #srchinput id="srch" name="search" [(ngModel)]="searchString" (ngModelChange)="searchFunction($event)">
         
     </div>
     <div class="contact-list">
