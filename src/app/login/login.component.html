@@ -7,20 +7,27 @@
             <div class="con">
                 <div class="input_box">
                     <span class="input-item">
-                        <i class="fa fa-phone"></i>
+                        <img src="../../assets/icons/phone/phone dark blue.png" alt="phone">
+                        <!-- <i class="fa fa-phone"></i> -->
                     </span>
                     <input class="form-input" formControlName="phone" id="txt-input" type="text" placeholder="+38">
                 </div>
 
                 <div class="input_box">
                     <span class="input-item">
-                        <i class="fa fa-lock"></i>
+                        <img src="../../assets/icons/lock/lock dark blue.png" alt="lock">
+                        <!-- <i class="fa fa-lock"></i> -->
                     </span>
                     <input class="form-input" [type]="passwordHide ? 'password' : 'text'" formControlName="password" placeholder="Password" id="pwd" name="password">
 
                     <!--      Show/hide password  -->
                     <span>
-                        <i [class]="passwordHide ? 'fa fa-eye-slash' : 'fa fa-eye' " aria-hidden="true" type="button" id="eye" (click)="eyebutton()"></i>
+                        <button class="eye"  (click)="eyebutton()">
+                            <img [src]="passwordHide ? '../../assets/icons/eye/Icon hide password.png' : '../../assets/icons/eye/Icon show password.png' " alt="eye">
+                    </button>
+                        <!-- <img src="../../assets/icons/eye/Icon hide password.png" alt="lock"> -->
+                        
+                        <!-- <i [class]="passwordHide ? 'fa fa-eye-slash' : 'fa fa-eye' " aria-hidden="true" type="button" id="eye" (click)="eyebutton()"></i> -->
                     </span>
                 </div>
                 <button class="log-in"> УВІЙТИ </button>

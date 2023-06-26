@@ -57,26 +57,6 @@ form .con {
 }
 
 
-
-/* Show/hide password Font Icon */
-#eye {
-    background: #fff;
-    color: #333;
-
-    margin: 5.9px 0 0 0;
-    margin-left: -45px;
-    padding: 10px 9px 0px 0px;
-    border-radius: 5px;
-
-    float: right;
-    position: relative;
-    right: 1%;
-    top: -.2%;
-    z-index: 5;
-
-    cursor: pointer;
-}
-
 /* inputs form  */
 form .input_box {
     height: 50px;
@@ -110,7 +90,18 @@ form .input_box {
     border: 1px solid #E04349;
 }
 
-button {
+button.eye{
+    background: #fff;
+    border: none;
+
+    position: absolute;
+    bottom: 50%;
+    right: 20px;
+    transform: translateY(50%);
+}
+
+
+button.log-in {
     display: inline-block;
     color: #ffff;
 
