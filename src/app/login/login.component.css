@@ -145,3 +145,21 @@ button.log-in {
 .logo{
     transform: scale(1.2);
 }
+
+.warn{
+    background: #fff;
+
+    position: absolute;
+    bottom: 50%;
+    right: 50px;
+    transform: translateY(50%);
+}
+
+.warn-log{
+    background: #fff;
+
+    position: absolute;
+    bottom: 50%;
+    right: 20px;
+    transform: translateY(50%);
+}
