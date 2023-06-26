@@ -4,5 +4,4 @@
 .vscode
 .vs
 .editorconfig
-dist
 node_modules

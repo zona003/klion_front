@@ -4,6 +4,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
 EXPOSE 4200 49153
+RUN npm run build
 CMD npm run start
 
 FROM nginx as runtime
