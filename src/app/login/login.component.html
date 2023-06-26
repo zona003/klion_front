@@ -16,7 +16,6 @@
                 <div class="input_box">
                     <span class="input-item">
                         <img src="../../assets/icons/lock/lock dark blue.png" alt="lock">
-                        <!-- <i class="fa fa-lock"></i> -->
                     </span>
                     <input class="form-input" [type]="passwordHide ? 'password' : 'text'" formControlName="password" placeholder="Password" id="pwd" name="password">
 
@@ -25,9 +24,6 @@
                         <button class="eye"  (click)="eyebutton()">
                             <img [src]="passwordHide ? '../../assets/icons/eye/Icon hide password.png' : '../../assets/icons/eye/Icon show password.png' " alt="eye">
                     </button>
-                        <!-- <img src="../../assets/icons/eye/Icon hide password.png" alt="lock"> -->
-                        
-                        <!-- <i [class]="passwordHide ? 'fa fa-eye-slash' : 'fa fa-eye' " aria-hidden="true" type="button" id="eye" (click)="eyebutton()"></i> -->
                     </span>
                 </div>
                 <button class="log-in"> УВІЙТИ </button>
