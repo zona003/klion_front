@@ -13,6 +13,10 @@ import { ProfileComponent } from '../profile/profile.component';
 
 import { ModalContactsComponent } from '../modal-contacts/modal-contacts.component';
 
+import { CardDetailVacationComponent } from '../card_details/card-detail-vacation/card-detail-vacation.component';
+import { CardDetailRandomComponent } from '../card_details/card-detail-random/card-detail-random.component';
+import { CardDetailInvoiceComponent } from '../card_details/card-detail-invoice/card-detail-invoice.component';
+
 
 @NgModule({
     imports: [
@@ -27,7 +31,10 @@ import { ModalContactsComponent } from '../modal-contacts/modal-contacts.compone
         ContactsComponent,
         NavbarComponent,
         ProfileComponent,
-        ModalContactsComponent
+        ModalContactsComponent,
+        CardDetailVacationComponent,
+        CardDetailRandomComponent,
+        CardDetailInvoiceComponent,
     ]
 })
 export class HomeModule {}

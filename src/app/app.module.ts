@@ -18,6 +18,7 @@ import { AuthGuard } from './_helper/auth.guard';
 import { JwtInterceptor } from './_helper/jwt.interceptor';
 
 
+
 const homeModule = () => import('./home/home.module').then(x=> x.HomeModule);
 
 
@@ -32,7 +33,6 @@ const appRoutes: Routes =[
   declarations: [
     AppComponent,
     LoginComponent,
-    
   ],
   imports: [
     HttpClientModule,
