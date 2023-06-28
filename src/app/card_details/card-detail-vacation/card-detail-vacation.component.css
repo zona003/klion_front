@@ -137,7 +137,7 @@ text-align: left;
     position: absolute;
     bottom: 75px;
     justify-content: space-between;
-    width: -webkit-fill-available;
+    width: 100%;
 }
 
 .accept-button{
