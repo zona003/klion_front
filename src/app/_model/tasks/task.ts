@@ -2,8 +2,8 @@ import { Type } from "@angular/core";
 
 export class Task{
 
-    creteDate?: Date;
-    deadlineDate?: Date;
+    public creteDate?: Date;
+    public deadlineDate?: Date;
 
     constructor(
         public ОbjectName:string

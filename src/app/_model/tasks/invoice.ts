@@ -1,6 +1,6 @@
 export class Invoice{
-    creteDate?: Date;
-    deadlineDate?: Date;
+    public creteDate?: Date;
+    public deadlineDate?: Date;
 
     constructor(
         public ОbjectName:string

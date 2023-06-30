@@ -1,6 +1,6 @@
 export class Vacation{
-    creteDate?: Date;
-    deadlineDate?: Date;
+    public creteDate?: Date;
+    public deadlineDate?: Date;
 
     constructor(
         public ObjectName:string
