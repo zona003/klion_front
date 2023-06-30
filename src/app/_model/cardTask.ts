@@ -3,9 +3,9 @@ import { Task } from "./tasks/task";
 import { Vacation } from "./tasks/vacation";
 
 enum CardType{
-    task
-    , vacation
-    , invoice
+    task = "task"
+    , vacation = "vacation"
+    , invoice = "invoice"
 }
 
 

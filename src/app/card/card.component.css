@@ -9,6 +9,11 @@
     padding-left: 16px;
 }
 
+.card_item a{
+    text-decoration: none;
+}
+
+
 .cards_container {
     display: block;
     background-color: #ffff;
@@ -30,6 +35,9 @@
 
 
 .dataline{
+    display: flex;
+    justify-content: left;
+    align-items: center;
 font-weight: 500;
 font-size: 12px;
 line-height: 15px;
@@ -37,7 +45,7 @@ line-height: 15px;
 color: #E04349;
 }
 
-.dataline i {
+.dataline img {
     margin-right: 10px;
 }
 

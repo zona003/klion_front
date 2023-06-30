@@ -4,7 +4,7 @@
     </div>
     <div *ngFor="let taskItem of cardTasks" class="cards_container">
         <div class="card_item">
-            <a [routerLink]='taskItem.type.toString().concat("/", taskItem.Uid)'>
+            <a [routerLink]='taskItem.type.concat("/", taskItem.Uid)'>
                 <div class="dataline">
                     <img src="../../assets/icons/clock/default.png" alt="clock">
                     {{taskItem.expDate | date: 'dd.MM.yyyy HH:mm'}}
