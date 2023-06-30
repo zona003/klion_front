@@ -19,9 +19,9 @@ const routes: Routes = [
             , { path: 'card', component: CardComponent }
             , { path: 'contacts', component: ContactsComponent }
             , { path : 'profile', component: ProfileComponent}
-            , { path : 'detail-vacation', component: CardDetailVacationComponent}
-            , { path : 'detail-random', component: CardDetailRandomComponent}
-            , { path : 'detail-invoice', component: CardDetailInvoiceComponent}
+            , { path : 'detail-vacation/:uid', component: CardDetailVacationComponent}
+            , { path : 'detail-random/:uid', component: CardDetailRandomComponent}
+            , { path : 'detail-invoice/:uid', component: CardDetailInvoiceComponent}
         ]
     }
 ];

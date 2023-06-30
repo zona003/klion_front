@@ -6,8 +6,10 @@ import { catchError, map } from 'rxjs/operators';
 
 import { environment } from '../../enviroments/environment';
 import { User } from '../_model/user';
-import { Task } from '../_model/task';
 import { Contact } from '../_model/contact';
+import {Task} from '../_model/tasks/task';
+import {Vacation} from '../_model/tasks/vacation';
+import {Invoice} from '../_model/tasks/invoice';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
@@ -80,6 +82,32 @@ export class AccountService {
         );
     }
 
+    getVacations(){
+        return this.http.get<Vacation[]>(`${environment.apiUrl}/vacations`).pipe(
+            catchError(error => {
+                const statusCode = error.status;
+                console.log(error.message);
+                if(error.status == 401){
+                    this.deleteUser();
+                }
+                return throwError(error);
+            })
+        );
+    }
+
+    getInvoices(){
+        return this.http.get<Invoice[]>(`${environment.apiUrl}/payments`).pipe(
+            catchError(error => {
+                const statusCode = error.status;
+                console.log(error.message);
+                if(error.status == 401){
+                    this.deleteUser();
+                }
+                return throwError(error);
+            })
+        );
+    }
+
     getContacts(){
         return this.http.get<Contact[]>(`${environment.apiUrl}/users`).pipe(
             catchError(error => {
@@ -91,6 +119,24 @@ export class AccountService {
                 return throwError(error);
             })
         );
+    }
+
+    updateAnyTaskStatus(Uid:string, AgreeStatus:boolean ){
+        const body = { Uid, AgreeStatus };
+        this.http.put<any>(`${environment.apiUrl}/task/status`, body)
+        .subscribe({
+            next: data => {
+                console.log(data.id);
+                this.router.navigate(['/home']);
+            },
+            error: error => {
+                console.log(error.message);
+                if(error.status == 401){
+                    this.deleteUser();
+                }
+                return throwError(error);
+            }
+        });
     }
 
     deleteUser()

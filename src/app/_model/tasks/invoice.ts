@@ -3,14 +3,14 @@ export class Invoice{
         public ОbjectName:string
         , public TaskName:string
         , public Uid:string
-        , public Date: Date
+        , public Date: string
         , public Author: string
         , public AuthorId: string
         , public EndUser:string
         , public EndUserId:string
-        , public DeadlineDate: Date
+        , public DeadlineDate: string
         , public TaskInfo:string
-        , public AgreeStatys:boolean
+        , public AgreeStatys:string
         , public LinkedTaskId:string
         , public ApprovalList:string|null
         , public Comment:string
@@ -19,7 +19,7 @@ export class Invoice{
         , public Kontragent:string
         , public Organization:string
         , public Sum:string
-        , public PaymentDate:Date
+        , public PaymentDate:string
         , public PaymentPurpose:string
     )
     {}

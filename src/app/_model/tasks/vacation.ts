@@ -3,21 +3,21 @@ export class Vacation{
         public ОbjectName:string
         , public TaskName:string
         , public Uid:string
-        , public Date: Date
+        , public Date: string
         , public Author: string
         , public AuthorId: string
         , public EndUser:string|null
         , public EndUserId:string
-        , public DeadlineDate: Date
+        , public DeadlineDate: string
         , public TaskInfo:string
-        , public AgreeStatys:boolean
+        , public AgreeStatys:string
         , public LinkedTaskId:string
         , public ApprovalList:string|null
         , public Comment:string
         , public EnableDeadDateShift:boolean
         , public LayoutType:number
-        , public PeriodStart:Date
-        , public PeriodEnd:Date
+        , public PeriodStart:string
+        , public PeriodEnd:string
         , public HolidayMayker:string
         , public Substitutional:string
     )
