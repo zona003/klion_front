@@ -12,7 +12,7 @@ export class Invoice{
         , public TaskInfo:string
         , public AgreeStatys:string
         , public LinkedTaskId:string
-        , public ApprovalList:string|null
+        , public ApprovalList:string[]|null
         , public Comment:string
         , public EnableDeadDateShift:boolean
         , public LayoutType:number

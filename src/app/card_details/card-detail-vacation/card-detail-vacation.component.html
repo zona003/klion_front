@@ -5,35 +5,35 @@
     <div class="detail-body">
         <div class="detail-data">
             <div class="task-title">
-                УЗГОДИТИ ВІДПУСТКУ
+                {{currentVacation?.AgreeStatys}}
             </div>
             <div class="dataline">
                 <img src="../../assets/icons/clock/default.png" alt="clock">
-                01.07.2023 15:30
+                {{currentVacation?.DeadlineDate}}
             </div>
             <div class="content">
             <div class="contact-name">
-                Співробітник: <span> Понікаров Олег Миколайович</span> 
+                Співробітник: <span> {{currentVacation?.HolidayMayker}} </span> 
             </div>
             <div class="vacation-type">
                 Вид відпустки:  <span> щорічна</span>
             </div>
             <div class="vacation-time">
-                Період відпустки: з 25.06.2023 по 27.06.2023
+                Період відпустки:  з {{currentVacation?.PeriodStart}} по {{currentVacation?.PeriodEnd}}
             </div>
             <div class="replace-name">
-                Заміщаючий: Рубан Ярослав Генадійович
+                Заміщаючий: {{currentVacation?.Substitutional}}
             </div>
             <div class="comment">
                 Коментар:
-                Прошу надати щорічну відпустку
+                {{currentVacation?.TaskInfo}}
             </div>
         </div>
             
         </div>
     </div>
     <div class="control-buttons">
-        <button class="reject-button">ВІДХИЛИТИ</button>
-        <button class="accept-button">УЗГОДИТИ</button>
+        <button class="reject-button" (click)="RejectButtonClick()">ВІДХИЛИТИ</button>
+        <button class="accept-button" (click)="AcceptButtonClick()">УЗГОДИТИ</button>
     </div>
 </div>
