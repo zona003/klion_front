@@ -2,32 +2,34 @@
     <div class="logo_container">
         <img class="logo_img" src="../../assets/LogoKlionSmall.png" alt="small logo">
     </div>
-    <div *ngFor="let taskItem of cardTasks"  class="cards_container">
-        <div  class="card_item">
-            <div class="dataline">
-                <img src="../../assets/icons/clock/default.png" alt="clock">
-                {{taskItem.expDate | date: 'dd.MM.yyyy HH:mm'}}
-            </div>
-            <div class="cardtitle">
-                {{taskItem.title}}
-            </div>
-            <div class="cardbody">
-                <div class="counteragent">
-                    {{taskItem.counteragent == undefined ? 'Комментарий: ' + taskItem.comment : 'Контрагент: ' + taskItem.counteragent }}
+    <div *ngFor="let taskItem of cardTasks" class="cards_container">
+        <div class="card_item">
+            <a [routerLink]='taskItem.type.toString().concat("/", taskItem.Uid)'>
+                <div class="dataline">
+                    <img src="../../assets/icons/clock/default.png" alt="clock">
+                    {{taskItem.expDate | date: 'dd.MM.yyyy HH:mm'}}
                 </div>
-                <div class="sum">
-                    Сумма: {{taskItem.sum | number: '.2' }} грн
+                <div class="cardtitle">
+                    {{taskItem.title}}
                 </div>
-            </div>
-            <div class="createdata">
-                <div class="author">
-                    {{taskItem.author}}
+                <div class="cardbody">
+                    <div class="counteragent">
+                        {{taskItem.counteragent == undefined ? 'Комментарий: ' + taskItem.comment : 'Контрагент: ' +
+                        taskItem.counteragent }}
+                    </div>
+                    <div class="sum">
+                        Сумма: {{taskItem.sum | number: '.2' }} грн
+                    </div>
                 </div>
-                <div class="createdate">
-                    {{taskItem.createDate | date: 'dd.MM.yyyy HH:mm'}}
+                <div class="createdata">
+                    <div class="author">
+                        {{taskItem.author}}
+                    </div>
+                    <div class="createdate">
+                        {{taskItem.createDate | date: 'dd.MM.yyyy HH:mm'}}
+                    </div>
                 </div>
-            </div>
-
+            </a>
         </div>
     </div>
 </div>

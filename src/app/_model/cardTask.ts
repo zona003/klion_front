@@ -2,6 +2,13 @@ import { Invoice } from "./tasks/invoice";
 import { Task } from "./tasks/task";
 import { Vacation } from "./tasks/vacation";
 
+enum CardType{
+    task
+    , vacation
+    , invoice
+}
+
+
 export class CardTask{
     constructor(
         public Uid: string
@@ -12,6 +19,7 @@ export class CardTask{
         , public createDate: Date
         , public author: string
         , public sum: string
+        , public type: CardType
     ){}
 
 
@@ -24,7 +32,8 @@ export class CardTask{
             task.Comment,
             new Date(task.Date),
             task.AuthorId,
-            ""
+            "",
+            CardType.task
             );
     }
 
@@ -37,7 +46,8 @@ export class CardTask{
             vac.Comment,
             new Date(vac.Date),
             vac.Author,
-            ""
+            "",
+            CardType.vacation
         )
     }
 
@@ -50,7 +60,8 @@ export class CardTask{
             inv.Comment,
             new Date(inv.Date),
             inv.Author,
-            inv.Sum
+            inv.Sum,
+            CardType.invoice
         );
     }
 }

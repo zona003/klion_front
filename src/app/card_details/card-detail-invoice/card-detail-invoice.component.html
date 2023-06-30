@@ -5,34 +5,34 @@
     <div class="detail-body">
         <div class="detail-data">
             <div class="task-title">
-                УЗГОДИТИ РАХУНОК НА ОПЛАТУ ПОСТАЧАЛЬНИКА №0030414 ВІД 21.06.2023.
+                {{currentInvoice?.TaskName}}
             </div>
             <div class="dataline">
                 <img src="../../assets/icons/clock/default.png" alt="clock">
-                01.07.2023 15:30
+                {{currentInvoice?.DeadlineDate}}
             </div>
             <div class="content">
             <div class="contact-name">
-                Відповідальний: <span> Малик Наталія Юріївна</span> 
+                Відповідальний: <span> {{currentInvoice?.EndUser}} </span> 
             </div>
             <div class="invoice-sourse">
-                Постачальник: <span> ТОВ Розумний Дім </span>
+                Постачальник: <span> {{currentInvoice?.Kontragent}} </span>
             </div>
             <div class="payment-form">
                 Форма оплати: 
                 <span> 
-                    безготівковий розрахунок, р/р організації - Пумб Альбатрос, грн.
+                    {{currentInvoice?.TaskInfo}}
                 </span>
             </div>
             <div class="payment-purpose">
                 Призначення платежу: 
                 <span> 
-                    Оплата за послуги зг. Рах №0030414 від 21.04.2023. Всього 1230,00 грн. ПДВ (в т. ч.): 163,40 грн
+                    {{currentInvoice?.PaymentPurpose}}
                 </span>
             </div>
             <div class="comment">
                 Коментар:
-                Реєстр 17 тижня
+                {{currentInvoice?.Comment}}
             </div>
             </div>
 
@@ -57,10 +57,10 @@
                                 1
                             </td>
                             <td>
-                                Річна ліцензія програмного комплексу 
+                                {{currentInvoice?.TaskInfo}}
                             </td>
                             <td>
-                                1230.00 грн
+                                {{currentInvoice?.Sum}} грн
                             </td>
                         </tr>
                     </tbody>
@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="control-buttons">
-        <button class="reject-button">ВІДХИЛИТИ</button>
-        <button class="accept-button">УЗГОДИТИ</button>
+        <button class="reject-button" (click)="RejectButtonClick()" >ВІДХИЛИТИ</button>
+        <button class="accept-button" (click)="AcceptButtonClick()">УЗГОДИТИ</button>
     </div>
 </div>
