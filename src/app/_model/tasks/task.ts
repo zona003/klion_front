@@ -9,7 +9,7 @@ export class Task{
         , public EndUserId:string
         , public DeadlineDate: string
         , public TaskInfo:string
-        , public AgreeStatys:string
+        , public AgreeStatys:boolean|null
         , public LinkedTaskId:string
         , public ApprovalList:string[]|null
         , public Comment:string
