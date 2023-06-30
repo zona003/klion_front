@@ -1,9 +1,12 @@
 export class Invoice{
+    creteDate?: Date;
+    deadlineDate?: Date;
+
     constructor(
         public ОbjectName:string
         , public TaskName:string
         , public Uid:string
-        , public Date: string
+        , public date: string
         , public Author: string
         , public AuthorId: string
         , public EndUser:string
@@ -22,5 +25,8 @@ export class Invoice{
         , public PaymentDate:string
         , public PaymentPurpose:string
     )
-    {}
+    {
+        this.creteDate = new Date(date);
+        this.deadlineDate = new Date(DeadlineDate);
+    }
 }

@@ -20,6 +20,7 @@ export class CardTask{
         , public author: string
         , public sum: string
         , public type: CardType
+        , public status: boolean|null
     ){}
 
 
@@ -30,10 +31,11 @@ export class CardTask{
             task.TaskName,
             task.EndUserId,
             task.Comment,
-            new Date(task.Date),
+            new Date(task.date),
             task.AuthorId,
             "",
-            CardType.task
+            CardType.task,
+            task.AgreeStatys
             );
     }
 
@@ -44,10 +46,11 @@ export class CardTask{
             vac.TaskName,
             vac.AuthorId,
             vac.Comment,
-            new Date(vac.Date),
+            new Date(vac.date),
             vac.Author,
             "",
-            CardType.vacation
+            CardType.vacation,
+            vac.AgreeStatys
         )
     }
 
@@ -58,10 +61,11 @@ export class CardTask{
             inv.TaskName,
             inv.Author,
             inv.Comment,
-            new Date(inv.Date),
+            new Date(inv.date),
             inv.Author,
             inv.Sum,
-            CardType.invoice
+            CardType.invoice,
+            inv.AgreeStatys
         );
     }
 }

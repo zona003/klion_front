@@ -2,7 +2,7 @@
     <div class="logo_container">
         <img class="logo_img" src="../../assets/LogoKlionSmall.png" alt="small logo">
     </div>
-    <div *ngFor="let taskItem of cardTasks" class="cards_container">
+    <div *ngFor="let taskItem of cardTasks" class="cards_container" [style.border]="taskItem.status === null ?  '1px solid #E04349' : 'none'">
         <div class="card_item">
             <a [routerLink]='taskItem.type.concat("/", taskItem.Uid)'>
                 <div class="dataline">

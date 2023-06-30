@@ -1,9 +1,12 @@
 export class Vacation{
+    creteDate?: Date;
+    deadlineDate?: Date;
+
     constructor(
         public ObjectName:string
         , public TaskName:string
         , public Uid:string
-        , public Date: string
+        , public date: string
         , public Author: string
         , public AuthorId: string
         , public EndUser:string|null
@@ -21,5 +24,8 @@ export class Vacation{
         , public HolidayMayker:string
         , public Substitutional:string
     )
-    {}
+    {
+        this.creteDate = new Date(date);
+        this.deadlineDate = new Date(DeadlineDate);
+    }
 }

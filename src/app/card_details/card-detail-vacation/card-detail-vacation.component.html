@@ -9,7 +9,7 @@
             </div>
             <div class="dataline">
                 <img src="../../assets/icons/clock/default.png" alt="clock">
-                {{currentVacation?.DeadlineDate}}
+                {{currentVacation?.deadlineDate | date: 'dd.MM.yyyy HH:mm'}}
             </div>
             <div class="content">
             <div class="contact-name">

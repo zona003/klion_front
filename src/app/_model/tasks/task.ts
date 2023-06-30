@@ -1,9 +1,15 @@
+import { Type } from "@angular/core";
+
 export class Task{
+
+    creteDate?: Date;
+    deadlineDate?: Date;
+
     constructor(
         public ОbjectName:string
         , public TaskName:string
         , public Uid:string
-        , public Date: string
+        , public date: string
         , public AuthorId: string
         , public CreatorId: string
         , public EndUserId:string
@@ -15,5 +21,8 @@ export class Task{
         , public Comment:string
         , public EnableDeadDateShift:boolean
         , public LayoutType:number
-    ){}
+    ){
+        this.creteDate = new Date(date);
+        this.deadlineDate = new Date(DeadlineDate);
+    }
 }

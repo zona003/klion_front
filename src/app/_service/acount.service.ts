@@ -126,7 +126,7 @@ export class AccountService {
         this.http.put<any>(`${environment.apiUrl}/task/status`, body)
         .subscribe({
             next: data => {
-                console.log(data.id);
+                console.log("succes");
                 this.router.navigate(['/home']);
             },
             error: error => {
