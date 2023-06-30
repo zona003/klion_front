@@ -195,6 +195,27 @@ table{
     border: 1px solid #B9B9B9;
     border-radius: 4px;
     border-spacing: 0;
+
+    font-family: 'Montserrat';
+}
+
+th{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+table tr th:last-child{
+    font-family: 'Montserrat';
+font-size: 12px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+
 }
 
 table, 
@@ -209,9 +230,17 @@ th{
 
  td{
     border: 1px solid #B9B9B9;
+    font-family: 'Montserrat';
+font-size: 12px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+
 }
 
 td:first-child{
     width: 35px;
     height: 42px;
+    text-align: center;
 }
