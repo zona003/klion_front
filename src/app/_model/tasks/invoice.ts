@@ -1,6 +1,6 @@
 export class Invoice{
-    public creteDate?: Date;
-    public deadlineDate?: Date;
+    public creteDate: Date;
+    public deadlineDate: Date;
 
     constructor(
         public ОbjectName:string
@@ -27,6 +27,8 @@ export class Invoice{
     )
     {
         this.creteDate = new Date(date);
+        console.log(this.creteDate);
         this.deadlineDate = new Date(DeadlineDate);
+        console.log(this.deadlineDate);
     }
 }
