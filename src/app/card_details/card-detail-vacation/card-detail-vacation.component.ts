@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Vacation } from 'src/app/_model/tasks/vacation';
+import { Router, ActivatedRoute } from '@angular/router';
+import { DetailService } from 'src/app/_service/detail.service';
+import { AccountService } from 'src/app/_service/acount.service';
 
 @Component({
   selector: 'app-card-detail-vacation',
